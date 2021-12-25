@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습혼2</title>
+    <script>
+        window.onload = function(){
+            var htmlbody = document.querySelector('body');
+            htmlbody.style.backgroundColor = 'lightblue';
+            var htmlbox = document.querySelector('.box');
+            htmlbox.style.width = '100px';
+            htmlbox.style.height = '300px';
+            htmlbox.style.backgroundColor = 'black';
+            // htmlbox.style.borderRadius = '50%';
+            htmlbox.style.positon = 'fixed';
+            // htmlbox.style.transform = 'translate(0,0)';
+            document.querySelector('.box').style.position = 'fixed';
+            document.querySelector('.box').style.top = '50%';
+            document.querySelector('.box').style.left = '50%';
+            
+            
+        }
+    </script>
+    <style>
+   
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나연습1</title>
+    <script>
+        window.onload = function(){
+            // a = 1;
+            // b = 5;
+            // document.write('a='+a);
+            // document.write('b='+6);
+            // console.log(a+b);
+            // alert('방갑슴니다~');
+            document.querySelector('.box02').style.width = '100px';
+            document.querySelector('.box02').style.height = '100px';
+            document.getElementById('box02').style.backgroundColor = 'blue';  
+            document.querySelector('.box02').style.position = 'fixed';
+            document.querySelector('.box02').style.top = '50%';
+            document.querySelector('.box02').style.left = '50%';
+            document.querySelector('.box02').style.transform = 'translate(-50%,-50%) rotate(-70deg)';
+        }
+    </script>
+    <style>
+        .box01{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%) rotate(-70deg);
+            width:200px;
+            height:200px;
+            background-color:#f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="box01">스타일박스</div>
+    <div class="box02" id="box02">자바박스</div>
+</body>
+</html>
