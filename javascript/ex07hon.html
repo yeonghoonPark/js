@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <script>
+        window.onload = function(){
+            let result = document.querySelector('#result');
+            let number01 = document.querySelector('#number01').innerHTML;
+            onclick = "result.value += number01";
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="par-box">
+        <input type="text" id="result" placeholder="0">
+        <button type="button" id="pl">+</button>
+        <button type="button" id="mi">-</button>
+        <button type="button" id="do">*</button>
+        <button type="button" id="na">/</button>
+        <button type="button" id="number01">1</button>
+        <button type="button" id="number02">2</button>
+        <button type="button" id="number03">3</button>
+        <button type="button" id="number04">4</button>
+        <button type="button" id="number05">5</button>
+        <button type="button" id="number06">6</button>
+        <button type="button" id="number07">7</button>
+        <button type="button" id="number08">8</button>
+        <button type="button" id="number09">9</button>
+        <button type="button" id="po">.</button>
+        <button type="button" id="nun">=</button>
+
+
+    </div>
+</body>
+</html>

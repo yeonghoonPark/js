@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료의 종류들</title>
+    <script>
+        window.onload = function(){
+            let a = document.querySelector('.box');
+            console.log(typeof a);
+            let b = 1;
+            console.log(typeof b);
+            let c = '1';
+            console.log(typeof c);
+            let d = false;
+            console.log(typeof d);
+            let e = [1,5,'대한민국'];
+            console.log(typeof e);
+            let f = function(){console.log('.box')};
+            console.log(typeof f);
+
+        }
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

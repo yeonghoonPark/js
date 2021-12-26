@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document2</title>
+</head>
+<body>
+    <input type="text" id="gender" placeholder="성별 예)'남' 또는 '여'" autofocus>
+    <input type="button" value="처리" onclick="
+        let $gender = document.querySelector('#gender');
+        let $result = document.querySelector('#result');
+        $result.value = $gender.value == '남' ? '신랑' : $gender.value == '여' ? '신부' : '입력갑 오류';
+    ">
+    <hr>    
+    <input type="text" id="result" placeholder="결과가 기대되는군요">
+</body>
+</html>
