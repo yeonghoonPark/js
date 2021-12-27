@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .par-box{
+            width: 900px;
+            height: 300px;
+            margin: 20px auto;
+            border: 2px solid #000;
+
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px 10px;
+
+        }
+        .child-box{
+            width: 100px;
+            height: 50px;
+            border: 1px solid #f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="par-box">
+        <div class="child-box child-box01">1</div>
+        <div class="child-box child-box02">2</div>
+        <div class="child-box child-box03">3</div>
+        <div class="child-box child-box04">4</div>
+        <div class="child-box child-box05">5</div>
+        <div class="child-box child-box06">6</div>
+        <div class="child-box child-box07">7</div>
+        <div class="child-box child-box08">8</div>
+        <div class="child-box child-box09">9</div>
+        <div class="child-box child-box10">10</div>
+    </div>
+
+    <script>
+        let chi = document.querySelectorAll('.child-box');
+        chi[0].style.backgroundColor = '#f00';
+        chi[9].style.display = 'none';
+    </script>
+</body>
+</html>

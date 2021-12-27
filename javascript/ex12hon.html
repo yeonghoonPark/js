@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수학 성적 처리</title>
+</head>
+<body>
+    <label>수학점수 <input type="text" id="score"></label>
+    <button type="button" id="btn">처리결과</button>
+    <hr>
+    <label>판정 <input type="text" id="result"></label>
+
+    <script>
+        let $score = document.getElementById('score');
+        let $btn = document.getElementById('btn');
+        let $result = document.getElementById('result');
+        
+        $btn.onclick = function(){
+            if($score.value>=0 && $score.value<=59){
+                $result.value = '탈락 재시험 확정';
+            }else if($score.value>=60 && $score.value<=69){
+                $result.value = '60점대 시군요 ㅋㅋ';
+            }else if($score.value>=70 && $score.value<=79){
+                $result.value = '70점대 나쁘지 않습니다';
+            }else if($score.value>=80 && $score.value<=89){
+                $result.value = '80점대 좋습니다';
+            }else if($score.value>=90 && $score.value<=100){
+                $result.value = '90점을 넘기셨군요 훌륭해요';
+            }
+        }
+        
+    </script>
+</body>
+</html>

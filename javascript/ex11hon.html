@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탈퇴</title>
+</head>
+<body>
+    <label><input type="checkbox" id="check">회원탈퇴</label>
+    <button type="button" id="btn">탈퇴하기</button>
+
+    <script>
+        let $check = document.getElementById('check')
+        let $btn = document.getElementById('btn')
+
+        $btn.onclick = function(){
+            if($check.checked){
+                member();
+            }
+        }
+
+        function member(){
+            let conf = confirm('정말 탈퇴 하려고?');
+            if(conf){
+                alert('탈퇴가 완료됨');
+            }else{
+                alert('탈퇴가 취소됨');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포럴사이트</title>
+</head>
+<body>
+    <input type="text" placeholder="원하는 곳을 적어주세요" id="mov">
+    <button type="button" id="btn">누르면 이동</button>
+
+    <script>
+        let _mov = document.getElementById('mov');
+        let _btn = document.getElementById('btn');
+
+        _btn.onclick = function(){
+            if(_mov.value =='naver' || _mov.value =='네이버'){
+                location.href='https://www.naver.com';
+            }else if(_mov.value =='daum' || _mov.value =='다음'){
+                location.href='https://www.daum.net';
+            }else{
+                alert('해당사이트는 직접 찾아가세요');
+                _mov.value='';
+                _mov.focus();
+            }
+        }
+    </script>
+</body>
+</html>
