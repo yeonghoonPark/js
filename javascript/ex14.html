@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <style>
+        .container{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 60%;
+            height: 300px;
+            margin: 0 auto;
+            border: 2px solid black;
+            gap: 2px;
+        }
+        .array{
+            width: 60%;
+            height: 50px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="array array01">01</div>
+        <div class="array array02">02</div>
+        <div class="array array03">03</div>
+        <div class="array array04">04</div>
+        <div class="array array05">05</div>
+        <div class="array array06">06</div>
+        <div class="array array07">07</div>
+        <div class="array array08">08</div>
+        <div class="array array09">09</div>
+        <div class="array array10">10</div>
+    </div>
+
+    <script>
+        // let array = document.querySelector('.array');
+        let array = document.querySelectorAll('.array');
+        // console.log(typeof array);
+
+        array[0].style.backgroundColor = 'red';
+        array[1].style.backgroundColor = 'green';
+        array[9].style.backgroundColor = 'red';
+        array[4].style.display = 'none';
+        array[8].style.backgroundColor = 'lightblue';
+    </script>
+</body>
+</html>

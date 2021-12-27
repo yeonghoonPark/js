@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <style>
+        input{
+            display: block;
+            margin: 20px auto;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <script>
+        // let a=0;
+        // while(a<10){
+        //     document.write('1은 100보다 작다')
+        //     a++;
+        // }
+        
+        // let inputTag = document.querySelectorAll('input'); 아래것과 동일
+        let inputTag = document.getElementsByTagName('input');
+        // inputTag[0].value = '1';
+        // inputTag[1].value = '2';
+        // inputTag[2].value = '3';
+        // inputTag[3].value = '4';
+        // inputTag[4].value = '5';
+        // inputTag[5].value = '6';
+        // inputTag[6].value = '7';
+        // inputTag[7].value = '8';
+        // inputTag[8].value = '9';
+        // inputTag[9].value = '10';
+
+        // 초기값
+        let cnt = 0;
+        while(cnt<=9){
+            inputTag[cnt].value = cnt + 1;
+            cnt++;
+        }
+    </script>
+   
+
+</body>
+</html>
