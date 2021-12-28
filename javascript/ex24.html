@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 개체</title>
+</head>
+<body>
+    <script>
+        // 대열로 바꾸는 법
+        let arr01 = new Array();
+        console.log(typeof arr01);
+        // 대열형태로 애초에 넣는 방법
+        let arr02 = [10,20,30];
+        console.log(typeof arr02);
+        // 또 다른 방법 String
+        let arr03 = new String();
+        console.log(typeof arr03);
+        // 또 다른 방법, 그냥 string을 입력 console에는 object가 아니라 string로 나오지만 object로 인식
+        let arr04 = 'korea';
+        console.log(typeof arr04);
+        console.log(arr02[0]);
+        console.log(arr04[0]);
+        
+
+        let t = 'i love you!';
+        document.write('<h1>문자열개체</h1>');
+        document.write('<h2>array.length 문자열의 갯수</h2>');
+        document.write(t + '=' + t.length + '<br>');
+        
+        document.write('<h2>array.charAt(index) 해당 인덱스의 값 출력</h2>');
+        document.write(t.charAt(3) + '<br>');
+        //위와 동일
+        document.write(t[3] + '<br>');
+        
+        document.write('<h2>array.indexOf(찾을 문자) 찾을 문자의 인덱스의 위치</h2>');
+        document.write(t.indexOf('o') + '<br>');
+        document.write(t.lastIndexOf('o') + '<br>');
+        //존재 하지 않을 때는 아래처럼 -값이 나온다
+        document.write(t.indexOf('k') + '<br>');
+        //indexOf와 비슷한 seach
+        document.write(t.search('o') + '<br>');
+        document.write(t.search('k') + '<br>');
+
+        document.write('<h2>array.match(찾을 문자) 찾을 문자가 존재하면 문자출력, 없다면 null</h2>');
+        document.write(t.match('you') + '<br>');
+        document.write(t.match('me') + '<br>');
+       
+        document.write('<h2>array.replace(찾을문자,바꿀문자) 찾을 문자열을 바꿀 문자열로 치환</h2>');
+        let result = t.replace('you','me');
+        document.write(result + '<br>');
+        result = result.replace('i','you');
+        document.write(result + '<br>');
+
+        document.write('<h2>array.slice(시작인덱스,끝인덱스전까지) 시작인덱스와 끝인덱스전까지를 잘라 오는것 </h2>');
+        document.write(t.slice(2,6) + '<br>');
+        document.write(t.slice(6,-2) + '<br>');
+        document.write(t.slice(t.indexOf(' ')+1,t.lastIndexOf(' ')) + '<br>');
+        document.write(t.slice(t.lastIndexOf(' ')+1,t.length) + '<br>');
+        //위와의 차이점은 slice의 -는 제일 뒤에자리 즉 -2면 뒤에서 두번째 sunstring는 -값이 들어가면 처음부터 불러오기 때문에 쓰지 않는다.
+        document.write('<h2>array.substring(시작인덱스,끝인덱스전까지) 시작인덱스와 끝인덱스전까지를 잘라 오는것 </h2>');
+        document.write(t.substring(2,6) + '<br>');
+        document.write(t.substring(6,-2) + '<br>');
+        document.write(t.substring(t.indexOf(' ')+1,t.lastIndexOf(' ')) + '<br>');
+        document.write(t.substring(t.lastIndexOf(' ')+1,t.length) + '<br>');
+ 
+        //슬라이스와 서브스트링과 비슷하지만 완전히 다른 것 substr
+        document.write('<h2>array.substr(시작인덱스,글자수)</h2>');
+        document.write(t.substr(2,6) + '<br>');
+        document.write(t.substr(6,-2) + '<br>');
+
+        //split
+        document.write('<h2>array.split(문자열) 문자열을 기준으로 분리해서 배열을 생성</h2>');
+        let arr = t.split(' ');
+        document.write(arr[0] + '<br>');
+        document.write(arr[1] + '<br>');
+        document.write(arr[2] + '<br>');
+        for(let cnt=0;cnt<arr.length;cnt++){
+            document.write(arr[cnt] + '<br>');
+        }
+
+        // 
+        document.write('<h2>array.toUpperCase(문자열) 문자열을 대문자로 변환</h2>');
+        document.write('<h2>array.toLowerCase(문자열) 문자열을 소문자로 변환</h2>');
+        let upperT = t.toUpperCase();
+        let lowerT = upperT.toLowerCase();
+        document.write(upperT + '<br>');
+        document.write(lowerT + '<br>'); 
+        document.write(upperT.concat(lowerT));
+
+        document.write('<h2>array.charCodeAt(index) 문자열이 ASCII코드값을 구한다</h2>');
+        document.write(t.charCodeAt(0)-32);
+
+        document.write('<h2>array.fromCharCode(ASCII)) ASCII코드값에 해당하는 문자를 구한다</h2>');
+        let char = 'I LOVE YOU!';
+        for(let cnt=0;cnt<char.length;cnt++){
+            if(char.charCodeAt(cnt)>=64 && char.charCodeAt(cnt)<=90){
+                document.write(String.fromCharCode(char.charCodeAt(cnt)+32));
+            }else{
+                document.write(String.fromCharCode(char.charCodeAt(cnt)));
+            }
+        }
+        
+        //
+        document.write('<h2>array.trim() 앞,뒤 공백 제거, 앞과 뒤의 공백은 없애지만 중간은 없애지 못한다</h2>');
+        let t2 = '   i  you  love  !    ';
+        console.log(t2.length);
+        console.log(t2.trim().length);
+        document.write(t2.length + '<br>');
+        document.write(t2.trim().length + '<br>');
+        document.write(t2.trim() + '<br>');    
+        
+
+
+    </script>
+</body>
+</html>
