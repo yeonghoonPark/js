@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력 = 시계</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
+        :root{
+            font-family: 'Oooh Baby', sans-serif;
+        }
+        .wrap{
+            height:100vh;
+            background-image:radial-gradient(#e7b55a,#d33020,#000);
+            text-shadow:1px 1px 4px #000;
+
+            display:flex;
+            flex-flow:column nowrap;
+            justify-content:center;
+            align-items:center;
+            
+        }
+        .time{
+            margin-bottom: 20px;
+            font-weight:700;
+            font-size:64px;
+            color:#fff;
+            order:2;
+        }
+        .date{
+            font-weight:500;
+            font-size:32px;
+            color:#fff;
+            order:1;
+        }
+        .wrap::after{
+            content:'DIGITAL CLOCK Design By .....';
+            display:block;
+            color:#000;
+            order:3;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="wrap">
+        <section class="sec time" id="time"></section>
+        <section class="sec date" id="date"></section>
+    </section>
+    
+    <script>
+        //시간 표시
+        setInterval(function(){
+            let  date = new Date(); //오늘의 날짜와 시간
+            let toHour = date.getHours(); //현재 시
+            if(toHour.toString().length == 1){
+                toHour = '0' + toHour;
+            }
+            let toMinute = date.getMinutes(); //현재 분
+            if(toMinute.toString().length == 1){
+                toMinute = '0' + toMinute;
+            }
+            let toSecond = date.getSeconds(); //현재 초
+            if(toSecond.toString().length == 1){
+                toSecond = '0' + toSecond; 
+            }
+            let _time = document.getElementById('time'); //시간표시 전달할 엘리먼트 
+            _time.innerHTML = toHour + ' : ' + toMinute + ' : ' + toSecond + ''; //html에 출력
+        },1000);
+            
+        setInterval(function(){
+            //날짜 표시
+            let date = new Date(); //오늘의 날짜와 시간
+            let toYear = date.getFullYear(); //년도
+            let toMonth = date.getMonth() + 1; //월
+            if(toMonth.toString().length == 1){
+                toMonth = '0' + toMonth;
+            }
+            let toDate = date.getDate(); //일
+            if(toDate.toString().length == 1){
+                toDate = '0' + toDate;
+            }
+            let toDay = date.getDay(); //요일
+            //숫자 요일 => 문자 요일 바꿔주는 역할
+            switch(toDay){
+                case 0:
+                    toDay='Sun';
+                    break;
+                case 1:
+                    toDay='Mon';
+                    break;
+                case 2:
+                    toDay='Tue';
+                    break;
+                case 3:
+                    toDay='Wen';
+                    break;
+                case 4:
+                    toDay='Thu';
+                    break;
+                case 5:
+                    toDay='Fri';
+                    break;
+                case 6:
+                    toDay='Sat';
+                    break;
+            }
+            let _date = document.getElementById('date'); //날짜를 전달할 엘리먼트
+            _date.innerHTML = toYear + '-' + toMonth + '-' + toDate + ' ' + toDay;
+        },86400000)
+
+        //날짜 표시
+        let date = new Date(); //오늘의 날짜와 시간
+            let toYear = date.getFullYear(); //년도
+            let toMonth = date.getMonth() + 1; //월
+            let toDate = date.getDate(); //일
+            let toDay = date.getDay(); //요일
+            //숫자 요일 => 문자 요일 바꿔주는 역할
+            switch(toDay){
+                case 0:
+                    toDay='Sun';
+                    break;
+                case 1:
+                    toDay='Mon';
+                    break;
+                case 2:
+                    toDay='Tue';
+                    break;
+                case 3:
+                    toDay='Wen';
+                    break;
+                case 4:
+                    toDay='Thu';
+                    break;
+                case 5:
+                    toDay='Fri';
+                    break;
+                case 6:
+                    toDay='Sat';
+                    break;
+            }
+            let _date = document.getElementById('date'); //날짜를 전달할 엘리먼트
+            _date.innerHTML = toYear + '-' + toMonth + '-' + toDate + ' ' + toDay;
+
+        
+
+
+
+    </script>
+</body>
+</html>

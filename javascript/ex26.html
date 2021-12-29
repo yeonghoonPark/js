@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜시간변경</title>
+    <style>
+        *{
+            font-size:30px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let toDate = new Date();
+        document.write(toDate + '<br>');
+        toDate.setFullYear(2020); //년도 변경, 년도를 변경하니 그에 맞춰서 요일이 자동으로 변했다.
+        document.write(toDate + '<br>');
+        toDate.setMonth(0); //월 변경
+        document.write(toDate + '<br>');
+
+        document.write(toDate.getTime());//1970년 1월 1일부터 toDate까지의 밀리초를 구한 값.
+    </script>
+</body>
+</html>

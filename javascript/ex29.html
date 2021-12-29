@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일정시간마다 반복 setInterval</title>
+    <style>
+        .count{
+            font-weight: 700;
+            font-size: 96px;
+            text-align: center;
+            line-height: 50vh;
+            transition: 0.3s;
+            /* animation-name: ; */
+
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes font-resize{
+            0%{
+               font-size: 100px;
+            }
+            25%{
+               font-size: 150px;
+            }
+            50%{
+               font-size: 125px;
+            }
+            75%{
+               font-size: 175px;
+            }
+            100%{
+                font-size: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="count" id="count"></div>
+    <script>
+        let cnt = 10;
+        let _count = document.getElementById('count');
+        _count.innerHTML = cnt;
+        //멈출 방법이 없어서 변수에 저장해버린 것
+        let inf = setInterval(function(){
+           if(cnt<=0){
+            _count.innerHTML = '끝';
+            _count.style.animationName = 'font-resize';
+            // _count.style.fontSize = '200px';
+               clearInterval(inf);
+           }else{
+                _count.innerHTML = --cnt;
+           }
+         },500)
+
+         
+         
+
+        //아래처럼 사용한다면 브라우저 창이 닫힐 때까지 멈출 수가 없다, break; 안먹는다, 반복문이 아니기 때문에
+        // window.setInterval(function(){
+        //     document.write(--cnt);
+        // },1000)
+    </script>
+</body>
+</html>

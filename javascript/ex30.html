@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지연실행</title>
+    <style>
+        .div{
+            width: 100vW;
+            height: 100vh;
+            background: lightcoral;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            font-size: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div" id="div">1</div>
+    <button id="btn01">누르면 멈춘다</button>
+    <button id="btn02">누르면 색 안바꿈</button>
+    
+    <script>
+        let box = document.getElementById('div');
+        let cnt = 10;
+        box.innerHTML = cnt;
+        let setLoop = setInterval(function(){
+            if(cnt<=0){
+                clearInterval(setLoop);
+            }else{
+                box.innerHTML = --cnt;
+            }
+        },500)
+        
+        let delayOne = setTimeout(function(){
+            box.style.backgroundColor = '#000';
+            box.style.color = '#fff';
+        },5500);
+
+        box.addEventListener('click',function(){
+            clearInterval(setLoop);
+        })
+
+        let _btn01 = document.getElementById('btn01');
+        let _btn02 = document.getElementById('btn02');
+
+        _btn01.addEventListener('click',function(){
+            clearInterval(setLoop);
+        })
+        _btn02.onclick = function(){
+            clearTimeout(delayOne);
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screen개체</title>
+    <style>
+        body{
+            background: red;
+        }
+        /* @media(min-width:900px){
+            body{
+                background: #0f0;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <script>
+        let scrWidth = screen.width;
+        let _body = document.querySelector('body');
+        if(scrWidth<=599){
+            _body.style.backgroundColor = '#f00'
+        }else{
+            _body.style.backgroundColor = '#0f0'
+        }//스크린의 너비이기 때문에 브라우저의 창이 줄어든다고 색상이 변화하지는 않는다 개발자창에서 창의 사이즈를 줄이고 f5로 재설정 해줘야 바뀐다
+
+
+        console.log(screen.width);
+        console.log(screen.height);
+        console.log(screen.availWidth);
+        console.log(screen.availHeight);//작업표시줄을 제외한 높이, 즉 작업표시줄을 제외한 해상도
+        console.log(screen.colorDepth);
+
+    </script>
+</body>
+</html>

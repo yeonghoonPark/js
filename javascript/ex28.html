@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM(window 개체)</title>
+</head>
+<body>
+    <h1>window</h1>
+    <button id="btn01">새창에서 열기</button>
+    <button id="btn02">새창에서 400*400으로 열기</button>
+    <button id="btn03">새창에서 400*400으로 왼쪽에서 400 떨어져서 열기</button>
+    <button id="btn04">스크롤 잠금</button>
+    <button id="btn05">주소표시줄 표시</button>
+    <script>
+        let btn01 = document.getElementById('btn01');
+        btn01.addEventListener('click',function(){
+            window.open('https://www.naver.com','_blank');
+        })
+        // 아래처럼 할 수 있다, 결과는 같지만 아래는 윈도우창의 주소창의 위치를 바꾸는 개념, 위는 여는 개념.
+        // btn.addEventListener('click',function(){
+        //     window.location.href='https://www.naver.com';
+        // })
+        
+        let btn02 = document.getElementById('btn02');
+        btn02.addEventListener('click',function(){
+            open('https://www.naver.com','naver','width=400,height=400');//window.을 생략 가능
+        })
+
+        let btn03 = document.getElementById('btn03');
+        btn03.addEventListener('click',function(){
+            window.open('https://www.naver.com','_blank','width=400,height=400,left=400');
+        })
+
+        let btn04 = document.getElementById('btn04');
+        btn04.addEventListener('click',function(){
+            window.open('https://www.naver.com','naver','scrollbars=no');//스크롤잠금 안먹힘;;
+        })
+
+        let btn05 = document.getElementById('btn05');
+        btn05.addEventListener('click',function(){
+            window.open('https://www.naver.com','_blank','wigth=300,height=300,location=yes');//주소표시줄도 안됨;;
+        })
+        
+        
+    </script>
+</body>
+</html>

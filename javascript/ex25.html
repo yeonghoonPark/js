@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장개체</title>
+</head>
+<body>
+    <script>
+        let arr = new Array();
+        console.log(typeof arr);
+        arr[0] = 10;
+        arr[1] = '한국';
+        arr[2] = true;
+        
+        let text = new String();
+        console.log(typeof text);
+        text[0] = 'k';
+        text[1] = 'o';
+        text[2] = 'r';
+        text[3] = 'e';
+        text[4] = 'a';
+
+        let  date = new Date();
+        console.log(typeof date);
+        console.log(date);
+
+        // 올해가 몇년인지 구해보자
+        let toYear = date.getFullYear();
+        console.log(toYear);
+        document.write('년도=' + toYear + '<br>');
+        // 월같은 경우는 1월을 0으로 보기 때문에 +1을 해준 것
+        let toMonth = date.getMonth() + 1;
+        console.log(toMonth);
+        document.write('월=' + toMonth + '<br>');
+        // 일
+        let toDate = date.getDate();
+        console.log(toDate);
+        document.write('일=' + toDate + '<br>');
+        // 요일
+        let toDay = date.getDay();
+        console.log(toDay);
+        document.write('요일=' + toDay + '<br>');
+        //if문으로 요일 설정
+        if(toDay == 0){
+            document.write('요일 = 일요일 <br>');
+        }else if(toDay == 1){
+            document.write('요일 = 월요일 <br>');
+        }else if(toDay == 2){
+            document.write('요일 = 화요일 <br>');
+        }else if(toDay == 3){
+            document.write('요일 = 수요일 <br>');
+        }else if(toDay == 4){
+            document.write('요일 = 목요일 <br>');
+        }else if(toDay == 5){
+            document.write('요일 = 금요일 <br>');
+        }else{
+            document.write('요일 = 토요일 <br>');
+        }
+
+        //시간
+        let toHour = date.getHours();
+        console.log(toHour);
+        document.write('시간=' + toHour + '시<br>');
+        //분
+        let toMinute = date.getMinutes();
+        console.log(toMinute);
+        document.write('분=' + toMinute + '분<br>');
+        //초
+        let toSecond = date.getSeconds();
+        console.log(toSecond);
+        document.write('초=' + toSecond + '초<br>');
+        
+
+        
+    </script>
+</body>
+</html>
