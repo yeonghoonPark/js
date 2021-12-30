@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM (직접선택자)</title>
+</head>
+<body>
+    <h1>DOM</h1>
+    <h2 id="el" class="el" name="el">element</h2>
+    <script>
+        document.write('문서에 기록');
+        console.log('===<h1>===');
+        console.log(document.querySelector('h1'));
+        console.log(document.querySelectorAll('h1')[0]);//위와 다른점은 배열이다, 즉 index가 있다.
+        console.log(document.getElementsByTagName('h1')[0]);//위와 같이 배열이지만 처리방식이 더 빠르다.
+        
+        console.log('===<h2>===');
+        console.log(document.querySelector('h2'));//단수형, 만약 h2가 문서에 여러개라면 첫번째 1개만 가져온다.
+        console.log(document.querySelectorAll('h2')[0]);
+        console.log(document.getElementsByTagName('h2')[0]);
+        console.log(document.getElementById('el'));
+        console.log(document.getElementsByClassName('el')[0]);//Elements이기에 배열형식 이것도 index가 있다.
+        console.log(document.getElementsByName('el')[0]);//Elements이기에 배열형식 이것도 index가 있다.
+
+
+    </script>
+</body>
+</html>

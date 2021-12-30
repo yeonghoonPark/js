@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file-name</title>
+</head>
+<body>
+    <script>
+        //입력
+        let fileName = location.href;
+        console.log(typeof fileName);
+        
+        //처리
+        let stIndex = fileName.lastIndexOf('/') + 1;
+        let laIndex = fileName.length;
+        fileName = fileName.substring(stIndex,laIndex); // index의 숫자를 사용하여도 되고 변수를 선언해서도 가능하다
+        // fileName = fileName.substring(22,36); //substring를 사용하여 숫자로 가능
+        // fileName = fileName.slice(22,36); // slice도 가능
+        
+        //출력
+        console.log('파일명 : ' + fileName);
+    </script>
+</body>
+</html>

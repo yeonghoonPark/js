@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정의 개체</title>
+</head>
+<body>
+    <h1>사용자 정의 개체</h1>
+
+    <script>
+        let personInfo01 = ['김진아',20,'용인시','011-1234-1234'];
+        console.log(personInfo01);
+        console.log(personInfo01[0]);
+
+        let personInfo02 = new Object();
+
+        let personInfo03 = {
+            name:'김진아', //name은 키 또는 프로퍼티라고 부른다, 즉 personInfo03에는 4개의 프로퍼티,키가 있는 것
+            age:27,
+            address:'용인시',
+            phone:'010-1234-1234',
+            tmp:function(self){ //tmp라고 내가 정한 함수를 만들 수도 있다.
+                if(self=='hi'){
+                    console.log('안녕');
+                    document.write('안녕');
+                }else if(self=='안녕'){
+                    console.log('hi');
+                    document.write('hi');
+                }
+            },
+            pi:3.14536645236, //내가 그냥 정한 원주율pi
+            power:function(self){
+                return self*self;
+            }
+        }
+        
+
+
+        console.log('이름은 ' + personInfo03.name + '나이는 ' + personInfo03.age);
+        personInfo03.phone = '123-123-123'; //폰넘버라는 키를 수정한다
+        console.log(personInfo03.phone); //이처럼 대열처럼 순서가 존재하지 않기에 키의 키값을 마음대로 조정할 수 있다
+        personInfo03.tmp('hi');//'안녕'으로 변경하면 console에 hi가 출력되는 함수 tmp라는 것을 내가 만든 것
+
+
+        console.log(5*5*Math.PI);
+        console.log(5*5*personInfo03.pi);
+
+        console.log(Math.pow(5,2));
+        console.log(personInfo03.power(5));
+    </script>
+</body>
+</html>
