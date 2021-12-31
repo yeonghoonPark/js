@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>push(), pop(), splice(), shift(), unshift()</title>
+</head>
+<body>
+    <h1>배열요소의 삽입/삭제</h1>
+    <script>
+        document.write('<h2>배열요소의 삽입</h2>');
+        document.write('<h3>push()는 배열의 마지막 위치에 새로운 데이터 삽입/ unshift는 배열의 처음위치에 데이터 삽입</h3>');
+        
+        let arr01 = [1,2,3,4,5];
+        arr01.push(100);
+        document.write(arr01 + '<br>');
+        arr01.unshift(100);
+        document.write(arr01 + '<br>');
+
+        document.write('<h3>pop()은 배열의 마지막 데이터 삭제/ shift()는 배열의 첫번째 데이터 삭제</h3>')
+        let arr02 = [5,10,15,20,25];
+        arr02.shift();
+        document.write(arr02 + '<br>');
+        arr02.pop();
+        document.write(arr02 + '<br>');
+
+        document.write('<h3>splice(start index, delete num, insert value...)는</h3>')
+        let arr03 = [5,'한국',10,'미국',15];
+        document.write(arr03 + '<br>');
+        arr03.splice(1,3);
+        document.write(arr03);
+
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join, concat, slice, reverse, sort</title>
+</head>
+<body>
+    <h1>length, join(), concat(), slice(), reverse(), sort()</h1>
+
+
+    <script>
+        let arr01 = ['서울','경기','인천','충청','대전','광주'];
+        let arr02 = ['전라','경상','강원','제주','대구','부산','울산'];
+        
+        document.write('<h2>length는 배열요소의 갯수를 반환(array.length)</h2>')
+        document.write('arr01=' + arr01 + '<br>');
+        document.write('arr02=' + arr02 + '<br>');
+        document.write(arr01.length + '<br>');
+
+        for(let cnt=0;cnt<arr01.length;cnt++){
+            document.write(arr01[cnt]);
+        }
+        let arr03 = [1,3,5,7,9,11];
+        let arr04 = [13,15,17,19,21];
+        document.write('<br>');
+        document.write('<h2>join()은 배열개체를 스트링으로 변환(array.join(결합할문자열))</h2>')
+        document.write(arr03.join('-') + '<br>');
+
+        document.write('<h2>concat()은 배열개체를 병합, 즉 합친다 (arr01.concat(arr03))</h2>');
+        let arr05 = ['-'];
+        document.write(arr01.concat(arr02).join(arr05) + '<br>');
+        document.write(arr03.concat(arr04) + '<br>');
+
+        let arr06 = ['하','가','다','마','라','사'];
+        let arr07 = ['b','f','e','a','g'];
+        let arr08 = [5,9,3,4,6,2,8,1,0,7];
+        document.write('<h2>sort()는 배열개체를 오름차순으로 정리한다(arr$$.sort())</h2>')
+        document.write(arr06.sort() + '<br>');
+        document.write(arr07.sort() + '<br>');
+        document.write(arr08.sort() + '<br>');
+
+        document.write(arr08.reverse() + '<br>');
+        document.write(arr06.reverse() + '<br>');
+
+        let arr09 = [0,1,2,3,4,5,6,7,8,9,10];
+        document.write(arr09.slice(1,9));
+    </script>
+</body>
+</html>
