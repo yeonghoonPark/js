@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        :root{
+            font-family: 'Great Vibes', sans-serif;
+        }
+        .wrap{
+            /* width: 600px; */
+            height: 600px;
+            margin: 100px auto;
+            /* border: 1px solid #000; */
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
+            text-align: center;
+            background-image: radial-gradient(#ccbf0a,#e94e32,#312222);
+        }
+        .time{
+            font-weight: 700;
+            font-size: 50px;
+            color: #fff;
+        }
+        .date{
+            font-weight: 700;
+            font-size: 50px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <sction class="wrap">
+        <section class="sec date" id="date"></section>
+        <section class="sec time" id="time"></section>
+    </sction>
+    <script>
+        setInterval(function(){
+            let date00 = new Date();
+            let toHour = date00.getHours();
+            let toMinute = date00.getMinutes();
+            let toSecond = date00.getSeconds();
+            let _time = document.getElementById('time');
+            _time.innerHTML = toHour + ': ' + toMinute + ': ' + toSecond;
+        },1000);
+        
+        setInterval(function(){
+            let date01 = new Date();
+            let toYear = date01.getFullYear();
+            let toMonth = date01.getMonth() + 1;
+            let toDate = date01.getDate();
+            let toDay = date01.getDay();
+            let _date = document.getElementById('date');
+            switch(toDay){
+                case 0:
+                    toDay='Sun';
+                    break;
+                case 1:
+                    toDay='Mon';
+                    break;
+                case 2:
+                    toDay='Thu';
+                    break;
+                case 3:
+                    toDay='Wen';
+                    break;
+                case 4:
+                    toDay='Thu';
+                    break;
+                case 5:
+                    toDay='Fri';
+                    break;
+                case 6:
+                    toDay='Sat';
+                    break;
+            }
+            _date.innerHTML = toYear + ', ' + toMonth + ', ' + toDate + ', ' + toDay;
+        },86400000);
+        let date01 = new Date();
+            let toYear = date01.getFullYear();
+            let toMonth = date01.getMonth() + 1;
+            let toDate = date01.getDate();
+            let toDay = date01.getDay();
+            let _date = document.getElementById('date');
+            switch(toDay){
+                case 0:
+                    toDay='Sun';
+                    break;
+                case 1:
+                    toDay='Mon';
+                    break;
+                case 2:
+                    toDay='Thu';
+                    break;
+                case 3:
+                    toDay='Wen';
+                    break;
+                case 4:
+                    toDay='Thu';
+                    break;
+                case 5:
+                    toDay='Fri';
+                    break;
+                case 6:
+                    toDay='Sat';
+                    break;
+            }
+            _date.innerHTML = toYear + ', ' + toMonth + ', ' + toDate + ', ' + toDay;
+    </script>
+</body>
+</html>
