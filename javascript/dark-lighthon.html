@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크나이트</title>
+    <style>
+        body.dark{
+            background-color: black;
+        }
+        h1.dark,h2.dark{
+            color: white;
+        }
+        a.dark,p.dark{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="sec00">
+            <h1>WEB</h1>
+            <ul>
+                <li><a href="#">WEB</a></li>
+                <li><a href="#">HTML5</a></li>
+                <li><a href="#">CSS3</a></li>
+                <li><a href="#">javaScript</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div class="sec01">
+            <h2>WEB</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur soluta voluptate, accusamus, reprehenderit veniam amet voluptatum doloribus dolor eveniet reiciendis iure exercitationem dolorum culpa quod magnam? Distinctio architecto aspernatur laudantium.
+                Ea qui ipsam beatae libero hic odio quis animi exercitationem officiis laudantium corrupti tempora, quasi velit ducimus! Ducimus aspernatur quisquam dolores corporis voluptatum numquam amet aliquam voluptas. Eaque, dolor accusantium.
+                Mollitia illum dolores nemo incidunt labore. Culpa quibusdam, fuga quasi illum, voluptatem deserunt alias porro architecto pariatur aspernatur eligendi, harum quisquam. Aperiam rem consectetur in, praesentium eligendi animi dolorum quisquam.
+                Temporibus tempore quam sit! Quidem, deserunt aut. Repellendus ratione sequi tempore. Tempora sint quae recusandae autem fugit facere a quaerat laboriosam quia, itaque, inventore, laudantium hic dolorem beatae excepturi natus.
+                Numquam quae quia, illo labore aut ratione quasi sapiente qui cum quidem odit soluta aliquam, excepturi ullam distinctio assumenda doloribus illum sequi tenetur perspiciatis dicta. Voluptate, delectus at? Quos, tenetur?
+            </p>
+        </div>
+        <div class="sec02">
+            <button type="button" id="btn00">D a r k</button>
+            <button type="button" id="btn01">L i g h t</button>
+        </div>
+    </div>
+    <script>
+        let _dark = document.getElementById('btn00');
+        let _light = document.getElementById('btn01');
+
+        let _body = document.getElementsByTagName('body')[0];
+        // console.log(_body);
+        let _h1 = document.querySelector('h1');
+        let _h2 = document.querySelector('h2');
+        let _a = document.getElementsByTagName('a');
+        let _p = document.getElementsByTagName('p');
+        
+        _dark.onclick = function(){
+            _body.classList.add('dark');
+            _h1.classList.add('dark');
+            _h2.classList.add('dark');
+            for(let cnt=1;cnt<_a.length;cnt++){
+                _a[cnt].classList.add('dark');
+            }
+            for(let cnt=0;cnt<_p.length;cnt++){
+                _p[cnt].classList.add('dark');
+            }
+        }
+        _light.addEventListener('click',function(){
+            _body.classList.remove('dark');
+            _h1.classList.remove('dark');
+            _h2.classList.remove('dark');
+            for(let cnt=1;cnt<_a.length;cnt++){
+                _a[cnt].classList.remove('dark');
+            }
+            for(let cnt=0;cnt<_p.length;cnt++){
+                _p[cnt].classList.remove('dark');
+            }
+        })
+    </script>
+</body>
+</html>

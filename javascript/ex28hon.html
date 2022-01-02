@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM개체</title>
+
+    <script>
+        window.onload = function(){
+            let _btn00 = document.getElementById('btn00');
+            let _btn01 = document.getElementById('btn01');
+            let _btn02 = document.getElementById('btn02');
+            let _btn03 = document.getElementById('btn03');
+            let _btn04 = document.getElementById('btn03');
+
+            _btn00.onclick = function(){
+                window.open('https://www.naver.com','_self');
+            }
+            _btn01.onclick = function(){
+                window.open('https://www.daum.net','_blank','width=500,height=500');
+            }
+            // _btn02.onclick = function(){
+            //     window.open('https://www.google.com','blank','width=400,height=800,top=400,left=400');
+            // }
+            _btn02.addEventListener('click',function(){
+                window.open('https://www.naver.com','_blank','width=300,height=1000,top=200,left=200');
+            })
+
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>window</h1>
+    <button type="button" id="btn00">새창에서 열기</button>
+    <button type="button" id="btn01">새창에서 500*500으로 열기</button>
+    <button type="button" id="btn02">새창에서 500*500으로 좌상으로 400 떨어져서 열기</button>
+    <button type="button" id="btn03">스크롤 잠금</button>
+    <button type="button" id="btn04">주소표시줄 표시</button>
+    
+</body>
+</html>

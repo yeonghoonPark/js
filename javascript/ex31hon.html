@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지연실행</title>
+    <style>
+        .div{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: thistle;
+
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        #btn00{
+            position: absolute;
+            top: 20%;
+            left: 80%;
+        }
+        #btn01{
+            position: absolute;
+            top: 20%;
+            left: 90%;
+        }
+        .div{
+            font-size: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div" id="div"></div>
+    <button type="button" id="btn00">누르면 카운트 멈춤</button>
+    <button type="button" id="btn01">누르면 변하지 않음</button>
+
+    <script>
+        let cnt = 10;
+        let _div = document.getElementById('div');
+        _div.innerHTML = cnt;
+        
+        let inf = setInterval(function(){
+            if(cnt<=0){
+                clearInterval(inf);
+                _div.innerHTML = '5초에 Red';
+            }else{
+                _div.innerHTML = cnt--;
+            }
+        },1000)
+
+        let change = setTimeout(function(){
+            _div.style.backgroundColor = 'red';
+        },6000)
+
+        let _btn00 = document.getElementById('btn00');
+        let _btn01 = document.getElementById('btn01');
+
+        _btn00.onclick = function(){
+            clearInterval(inf);
+        }
+        _btn01.addEventListener('click',function(){
+            clearTimeout(change);
+        })
+    </script>
+</body>
+</html>

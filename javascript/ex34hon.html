@@ -7,17 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>3초뒤 네이버로 이동합니다.</h1>
     <script>
-        let a = 1;
-
-        let b = setInterval(function(){
-                document.write(a);
-            },1000)
-
-        clearInterval(function(){
-            document.write(b);
-        },5000)
-        
+        setTimeout(function(){
+            window.open('https://www.naver.com','_self');
+        },3000)
     </script>
 </body>
 </html>

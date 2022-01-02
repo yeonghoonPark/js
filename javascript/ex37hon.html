@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간접 선택자</title>
+    <style>
+        .border{
+            border: 1px solid #000;
+        }
+        .green{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>간접 선택자</h1>
+    <div class="wrap" id="wrap">
+        <div class="container" id="container">
+            <ul>
+                <li id="first">1번</li>
+                <li>2번</li>
+                <li id="last">3번</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let _wrap = document.getElementById('wrap');
+        let _h1 = _wrap.parentNode.children[0];
+        _h1.classList.add('border');
+
+        let _container = document.getElementById('container');
+        let _ul = _container.children[0].children[1];
+        _ul.style.color = 'red';
+        
+        let _yellowGreen = _ul.parentNode.parentNode;
+        _yellowGreen.classList.add('green');
+        
+    </script>
+</body>
+</html>
