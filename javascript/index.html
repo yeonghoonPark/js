@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <style>
+        :root{
+            font-size:32px;
+        }
+        h1{
+         font-size:64px;            
+         text-align:center;
+        }
+        h1 a{
+            color:darkblue;
+        }
+        button{
+            font-size:inherit;
+        }
+        ul,ol,li{
+            list-style:none;
+        }
+        ul a{
+           font-size:42px; 
+           color:darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="./index.html">WEB</a></h1>
+    <button id="btn">NIGHT</button>
+    <ul>
+        <li><a href="#" onclick="return false;">html</a></li>
+        <li><a href="#" onclick="return false;">css</a></li>
+        <li><a href="#" onclick="return false;">javaScript</a></li>
+    </ul>
+    <hr>
+    <h2>web이란 무엇인가?</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quam necessitatibus provident nam minus repellendus eos iusto consequatur suscipit debitis est corrupti, ex soluta, et reprehenderit illum. Similique, aperiam commodi!
+        Fugiat atque ad nesciunt, pariatur illum assumenda alias odio earum sit ullam officiis doloremque nam dignissimos eaque ipsum aliquam voluptates reiciendis exercitationem dicta vel dolorum. Illum voluptatibus nisi autem amet.
+    </p>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, itaque sint? Optio mollitia, et quia, obcaecati alias at natus accusamus unde quod reiciendis suscipit quasi fuga dolor ea a vitae.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consectetur et delectus dolore, perferendis quisquam veniam officia laborum corrupti rem rerum ut eum aliquid? Mollitia officia nam ea porro alias.
+        Natus ipsum aliquid quaerat nam voluptatibus quibusdam labore aperiam similique debitis vero provident, nemo expedita dolore adipisci, veritatis tenetur eum tempore distinctio impedit. Aliquid voluptatum dolorem consequatur officia quia quaerat.
+        Blanditiis exercitationem consectetur repellat excepturi id voluptates reiciendis pariatur perspiciatis a accusamus quam tempore, odit quod, eius dignissimos, deserunt autem rerum minus aliquid incidunt. Ducimus, rerum tempora. Id, velit repellendus?
+    </p>
+    <script src="./js.user-function.js"></script>
+
+    <script>
+        let trigger = document.getElementById('btn');
+        trigger.onclick = function(){
+            inText(this);
+        }
+
+        function inText(self){
+            if(self.innerHTML == 'NIGHT'){
+                // 야간화면
+                self.innerHTML = 'DAY';
+                setStyle.bodyBgColor('#000');
+                setStyle.aTagColor('lightblue');
+                // bodyBgColor('#000');
+                // aTagColor('lightblue');
+                buttonColor('2px solid #fff','#000','#fff');
+                h2Color('#fff');
+                pTagColor('#ccc');
+            }else{
+                // 주간화면
+                self.innerHTML = 'NIGHT';
+                setStyle.bodyBgColor('#fff');
+                setStyle.aTagColor('darkblue');
+                // bodyBgColor('#fff');
+                // aTagColor('darkblue');
+                buttonColor('2px outset rgb(118,118,118)','rgb(239, 239, 239)','#000');
+                h2Color('#000');
+                pTagColor('#000');
+            }
+        }
+
+        let setStyle = {
+            bodyBgColor:bodyBgColor,
+            aTagColor:aTagColor,
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재귀함수 (재귀호출)</title>
+</head>
+<body>
+    <script>
+        let cnt=0;
+        let cnt2 = prompt('몇번이나 반복?');
+
+        //재귀함수를 이용한 반복 (자기자신이 자기자신을 호출)
+        function loop(){
+            console.log(cnt++);
+            if(cnt==cnt2){
+                return; //여기서는 return을 탈출하는 용도로 사용
+            }
+            loop();
+        }
+        loop();
+
+        //for문을 이용한 반복
+        // for(let cnt2=0;cnt2<=9;cnt2++){
+        //     loop();
+        // }
+        
+
+    </script>
+</body>
+</html>

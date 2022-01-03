@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입(prototype)</title>
+</head>
+<body>
+    <button id="btn01">1버튼</button>
+    <button id="btn02">2버튼</button>
+    <button id="btn03">3버튼</button>
+
+    <script>
+        // function setColor(self,color){
+        //     self.style.color = color;
+        // }
+        // let _button = document.getElementsByTagName('button');
+        
+        // setTimeout(function(){
+        //     setColor(_button[0],'#f00');
+        // },1000)
+        // setTimeout(function(){
+        //     setColor(_button[1],'#0f0');
+        // },2000)
+        // setTimeout(function(){
+        //     setColor(_button[2],'#00f');
+        // },3000)
+        
+        
+        // 객체 생성자 함수
+        function CheckBox(name,width,height){
+            this.userName = name;
+            this.boxWidth = width;
+            this.boxHeight = height;
+        }
+        CheckBox.prototype.getInfo = function(){
+            let str='';
+            str += '이름 : ' + this.userName + ',';
+            str += '너비 : ' + this.boxWidth + ',';
+            str += '높이 : ' + this.boxHeight;
+            return str;
+        }
+
+        let hong = new CheckBox('홍길동',100,50);
+        let kim = new CheckBox('김기덕',200,50);
+
+
+
+        console.log(hong);
+        console.log(hong.userName);
+        console.log(hong.boxWidth);
+        console.log(hong.boxHeight);
+        console.log(hong.getInfo());     
+        
+        
+
+
+        </script>
+</body>
+</html>
